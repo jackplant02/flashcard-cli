@@ -1,0 +1,1 @@
+A CLI tool for creating and reviewing flashcards.
