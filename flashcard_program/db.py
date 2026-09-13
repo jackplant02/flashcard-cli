@@ -22,6 +22,14 @@ def init_db():
         # Explicitly commit the changes 
         conn.commit()
 
-        
+
 def add_card(front, back):
-    """Add a card to the database."""
+    """Add a card to the database using parameterized queries."""
+    with sqlite3.connect(DB_NAME) as conn:
+        cursor = conn.cursor()
+        cursor.execute(
+            "INSERT INTO cards (front, back) VALUES (?, ?)",
+            # pass the values as a tuple matching the order of the '?' placeholders above.
+            (front, back)
+        )
+        conn.commit()
