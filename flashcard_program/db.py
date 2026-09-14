@@ -33,3 +33,10 @@ def add_card(front, back):
             (front, back)
         )
         conn.commit()
+
+def get_all_cards():
+    """Get all cards from the database."""
+    with sqlite3.connect(DB_NAME) as conn:
+        cursor = conn.cursor()
+        cursor.execute("SELECT id, front, back FROM cards")
+        conn.commit()

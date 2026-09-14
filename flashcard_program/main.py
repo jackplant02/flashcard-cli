@@ -1,10 +1,24 @@
+from db import add_card, get_all_cards, init_db
+
 def main():
+
+    init_db()
+
+    print("\nWelcome back!\n")
+
     while True:
-        print("\nWelcome back!\n")
-        entry = input("Please choose one of the following options: (a)dd a card, (s)tudy cards, or (q)uit: ")
+        entry = input("Please choose one of the following options: (a)dd a card, (s)tudy cards, or (q)uit: ").strip().lower()
 
         if entry == "q":
             break
+
+        elif entry == "a":
+            front = input("\nEnter front text: ").strip()
+            back = input("Enter back text: ").strip()
+
+            if front and back:
+                add_card(front, back)
+                print(f"Saved to database: front='{front}', back='{back}'")
 
         else:
             print("\nOops this program doesn't actually do anything yet lol.")
