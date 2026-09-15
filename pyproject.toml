@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flashcard_cli"
+version = "0.1.0"
+dependencies = []
+
+[project.scripts]
+flashcardcli = flashcard_program.main:main"
+
+[project.optional-dependencies]
+dev = ["pytest", "pyinstaller"]
