@@ -18,7 +18,7 @@ def main():
 
             if front and back:
                 add_card(front, back)
-                print(f"Saved to database: front='{front}', back='{back}'")
+                print(f"Saved to database: front='{front}', back='{back}'\n")
 
         else:
             print("\nOops this program doesn't actually do anything yet lol.")
